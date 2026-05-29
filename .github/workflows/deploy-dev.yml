@@ -1,0 +1,22 @@
+name: Deploy to Dev
+
+on:
+  push:
+    branches: [dev]
+
+jobs:
+  deploy:
+    name: Deploy to Dev Environment
+    runs-on: ubuntu-latest
+    environment:
+      name: dev
+      url: https://dev.meeting-assistant.example.com
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy to Dev
+        run: |
+          echo "Deploying to DEV environment..."
+          echo "Replace this with actual deployment steps (e.g., SSH, Docker, Kubernetes, AWS, Azure)"
+          echo "Dev deployment complete"
