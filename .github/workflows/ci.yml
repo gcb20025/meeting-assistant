@@ -1,0 +1,59 @@
+name: CI
+
+on:
+  push:
+    branches: [dev, qa, preprod, prod]
+  pull_request:
+    branches: [dev, qa, preprod, prod]
+
+jobs:
+  lint:
+    name: Lint & Format Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run lint check
+        run: |
+          echo "Lint check placeholder — replace with actual linter (e.g., ESLint, Prettier, flake8)"
+          echo "Lint check passed"
+
+  test:
+    name: Run Tests
+    runs-on: ubuntu-latest
+    needs: lint
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run tests
+        run: |
+          echo "Test placeholder — replace with actual test runner (e.g., Jest, Pytest, Mocha)"
+          echo "All tests passed"
+
+  build:
+    name: Build Verification
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Verify build
+        run: |
+          echo "Build verification placeholder — replace with actual build step (e.g., npm run build, docker build)"
+          echo "Build verification passed"
+
+  security-scan:
+    name: Security Scan
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run security scan
+        run: |
+          echo "Security scan placeholder — replace with actual scanner (e.g., Snyk, Trivy, CodeQL)"
+          echo "Security scan passed"

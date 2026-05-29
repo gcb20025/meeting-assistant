@@ -1,0 +1,22 @@
+name: Deploy to Prod
+
+on:
+  push:
+    branches: [prod]
+
+jobs:
+  deploy:
+    name: Deploy to Production Environment
+    runs-on: ubuntu-latest
+    environment:
+      name: prod
+      url: https://meeting-assistant.example.com
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy to Prod
+        run: |
+          echo "Deploying to PRODUCTION environment..."
+          echo "Replace this with actual deployment steps (e.g., SSH, Docker, Kubernetes, AWS, Azure)"
+          echo "Production deployment complete"

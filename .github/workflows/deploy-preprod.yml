@@ -1,0 +1,22 @@
+name: Deploy to Preprod
+
+on:
+  push:
+    branches: [preprod]
+
+jobs:
+  deploy:
+    name: Deploy to Preprod Environment
+    runs-on: ubuntu-latest
+    environment:
+      name: preprod
+      url: https://preprod.meeting-assistant.example.com
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy to Preprod
+        run: |
+          echo "Deploying to PREPROD environment..."
+          echo "Replace this with actual deployment steps (e.g., SSH, Docker, Kubernetes, AWS, Azure)"
+          echo "Preprod deployment complete"

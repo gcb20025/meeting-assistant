@@ -1,0 +1,22 @@
+name: Deploy to QA
+
+on:
+  push:
+    branches: [qa]
+
+jobs:
+  deploy:
+    name: Deploy to QA Environment
+    runs-on: ubuntu-latest
+    environment:
+      name: qa
+      url: https://qa.meeting-assistant.example.com
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy to QA
+        run: |
+          echo "Deploying to QA environment..."
+          echo "Replace this with actual deployment steps (e.g., SSH, Docker, Kubernetes, AWS, Azure)"
+          echo "QA deployment complete"
